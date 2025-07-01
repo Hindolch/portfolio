@@ -129,7 +129,7 @@ const MainContent = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-xl">🔬</span>
-                <span className="text-gray-700">I'm current learning about GNNs!</span>
+                <span className="text-gray-700">I'm currently learning about GNNs!</span>
               </div>
             </div>
           </div>
