@@ -140,13 +140,10 @@ const MainContent = ({ isMobile = false }: MainContentProps) => {
                 <span className="text-gray-700 text-sm md:text-base">Reimplementing state-of-the-art ML models from scratch to deepen core understanding</span>
               </div>
               <div className="flex items-start space-x-3">
-                <span className="text-xl">🔬</span>
-<<<<<<< HEAD
-                <span className="text-gray-700">I'm currently learning about GNNs!</span>
-=======
-                <span className="text-gray-700 text-sm md:text-base">I'm current learning about GNNs!</span>
->>>>>>> 88250fe (improved responsiveness)
-              </div>
+              <span className="text-xl">🔬</span>
+              <span className="text-gray-700 text-sm md:text-base">I'm currently learning about GNNs!</span>
+            </div>
+
             </div>
           </div>
         </section>
