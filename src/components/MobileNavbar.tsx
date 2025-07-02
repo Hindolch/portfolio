@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, FileText, Mail, MapPin, Github, Linkedin, Twitter, Folder } from 'lucide-react';
+import { Menu, X, FileText, Mail, MapPin, Github, Linkedin, Twitter, Folder, User, Briefcase, GraduationCap, Brain } from 'lucide-react';
 
 const MobileNavbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,8 +26,8 @@ const MobileNavbar = () => {
               />
             </div>
             <div>
-              <h1 className="font-bold text-gray-900">Hindol Roy Choudhury</h1>
-              <p className="text-sm text-blue-600">MLOps Engineer</p>
+              <h1 className="font-bold text-gray-900 text-sm">Hindol Roy Choudhury</h1>
+              <p className="text-xs text-blue-600">MLOps Engineer</p>
             </div>
           </div>
           <button
@@ -54,9 +54,10 @@ const MobileNavbar = () => {
               <div className="space-y-3">
                 <button
                   onClick={() => scrollToSection('home')}
-                  className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-colors text-gray-700 hover:text-blue-600"
+                  className="w-full text-left p-3 rounded-lg hover:bg-gray-50 transition-colors text-gray-700 hover:text-blue-600 flex items-center space-x-2"
                 >
-                  Home
+                  <User size={18} />
+                  <span>About</span>
                 </button>
                 <button
                   onClick={() => scrollToSection('projects')}
@@ -99,7 +100,7 @@ const MobileNavbar = () => {
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <Mail size={18} />
-                    <span className="text-sm">roychoudhuryhindol@gmail.com</span>
+                    <span className="text-sm break-all">roychoudhuryhindol@gmail.com</span>
                   </a>
                 </div>
               </div>

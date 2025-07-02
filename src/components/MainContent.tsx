@@ -1,7 +1,11 @@
 import React from 'react';
 import { Telescope, Microscope, Briefcase, GraduationCap, Wrench, Folder, Mail, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
 
-const MainContent = () => {
+interface MainContentProps {
+  isMobile?: boolean;
+}
+
+const MainContent = ({ isMobile = false }: MainContentProps) => {
   const experiences = [
     {
       title: "ML Research Intern (NLP)",
@@ -97,13 +101,21 @@ const MainContent = () => {
     }
   ];
 
+  const containerClass = isMobile 
+    ? "max-w-4xl mx-auto px-4 py-8" 
+    : "ml-80 pt-20 min-h-screen bg-gray-50";
+  
+  const contentClass = isMobile 
+    ? "" 
+    : "max-w-4xl mx-auto px-8 py-8";
+
   return (
-    <div className="ml-80 pt-20 min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-8 py-8">
+    <div className={containerClass}>
+      <div className={contentClass}>
         {/* Welcome Section */}
-        <section id="home" className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">
+        <section id="home" className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               👋 Hiii! I'm <span className="text-blue-600">Hindol</span>
             </h1>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
@@ -116,42 +128,46 @@ const MainContent = () => {
         </section>
 
         {/* Current Focus */}
-        <section className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">🚀</span>
               Current Focus
             </h2>
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <span className="text-xl">🔭</span>
-                <span className="text-gray-700">Reimplementing state-of-the-art ML models from scratch to deepen core understanding</span>
+                <span className="text-gray-700 text-sm md:text-base">Reimplementing state-of-the-art ML models from scratch to deepen core understanding</span>
               </div>
               <div className="flex items-start space-x-3">
                 <span className="text-xl">🔬</span>
+<<<<<<< HEAD
                 <span className="text-gray-700">I'm currently learning about GNNs!</span>
+=======
+                <span className="text-gray-700 text-sm md:text-base">I'm current learning about GNNs!</span>
+>>>>>>> 88250fe (improved responsiveness)
               </div>
             </div>
           </div>
         </section>
 
         {/* Work Experience */}
-        <section className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">🔧</span>
               Work Experience
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (
-                <div key={index} className="border-l-4 border-blue-200 pl-6">
+                <div key={index} className="border-l-4 border-blue-200 pl-4 md:pl-6">
                   <div className="mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900">{exp.title}</h3>
-                    <p className="text-blue-600 font-medium">{exp.company} · {exp.location} · <em>{exp.period}</em></p>
+                    <h3 className="text-lg md:text-xl font-semibold text-gray-900">{exp.title}</h3>
+                    <p className="text-blue-600 font-medium text-sm md:text-base">{exp.company} · {exp.location} · <em>{exp.period}</em></p>
                   </div>
                   <ul className="space-y-2">
                     {exp.description.map((item, i) => (
-                      <li key={i} className="flex items-start space-x-2 text-gray-700">
+                      <li key={i} className="flex items-start space-x-2 text-gray-700 text-sm md:text-base">
                         <div className="w-1.5 h-1.5 bg-gray-400 rounded-full mt-2 flex-shrink-0"></div>
                         <span>{item}</span>
                       </li>
@@ -164,34 +180,34 @@ const MainContent = () => {
         </section>
 
         {/* Education */}
-        <section className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">🎓</span>
               Education
             </h2>
-            <div className="border-l-4 border-blue-200 pl-6">
-              <h3 className="text-xl font-semibold text-gray-900">Tripura Institute of Technology</h3>
-              <p className="text-blue-600 font-medium">BTech, Computer Science & Engineering</p>
-              <p className="text-gray-600 italic">Feb 2023 – Aug 2027</p>
+            <div className="border-l-4 border-blue-200 pl-4 md:pl-6">
+              <h3 className="text-lg md:text-xl font-semibold text-gray-900">Tripura Institute of Technology</h3>
+              <p className="text-blue-600 font-medium text-sm md:text-base">BTech, Computer Science & Engineering</p>
+              <p className="text-gray-600 italic text-sm md:text-base">Feb 2023 – Aug 2027</p>
             </div>
           </div>
         </section>
 
         {/* Skills */}
-        <section className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">🧠</span>
               Skills
             </h2>
             <div className="space-y-6">
               {skills.map((skillGroup, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg p-6">
-                  <h3 className="font-semibold text-gray-900 mb-4 text-lg">{skillGroup.category}</h3>
+                <div key={index} className="bg-gray-50 rounded-lg p-4 md:p-6">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-base md:text-lg">{skillGroup.category}</h3>
                   <div className="flex flex-wrap gap-2">
                     {skillGroup.items.map((skill, i) => (
-                      <span key={i} className="px-3 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                      <span key={i} className="px-2 md:px-3 py-1 md:py-2 bg-blue-100 text-blue-800 rounded-full text-xs md:text-sm font-medium">
                         {skill}
                       </span>
                     ))}
@@ -203,19 +219,19 @@ const MainContent = () => {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section id="projects" className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">💼</span>
               Projects
             </h2>
-            <div className="space-y-8">
+            <div className="space-y-6 md:space-y-8">
               {projects.map((project, index) => (
-                <div key={index} className="border-l-4 border-green-200 pl-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{project.title}</h3>
+                <div key={index} className="border-l-4 border-green-200 pl-4 md:pl-6">
+                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">{project.title}</h3>
                   <ul className="space-y-2">
                     {project.description.map((item, i) => (
-                      <li key={i} className="flex items-start space-x-2 text-gray-700">
+                      <li key={i} className="flex items-start space-x-2 text-gray-700 text-sm md:text-base">
                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
                         <span>{item}</span>
                       </li>
@@ -228,9 +244,9 @@ const MainContent = () => {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="mb-16">
-          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+        <section id="contact" className="mb-12">
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 flex items-center">
               <span className="text-2xl mr-3">📫</span>
               Contact
             </h2>
@@ -238,13 +254,13 @@ const MainContent = () => {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <Mail className="text-blue-600" size={20} />
-                  <a href="mailto:roychoudhuryhindol@gmail.com" className="text-gray-700 hover:text-blue-600 transition-colors">
+                  <a href="mailto:roychoudhuryhindol@gmail.com" className="text-gray-700 hover:text-blue-600 transition-colors text-sm md:text-base break-all">
                     roychoudhuryhindol@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center space-x-3">
                   <MapPin className="text-blue-600" size={20} />
-                  <span className="text-gray-700">Tripura, India</span>
+                  <span className="text-gray-700 text-sm md:text-base">Tripura, India</span>
                 </div>
               </div>
               <div className="space-y-4">
@@ -254,7 +270,7 @@ const MainContent = () => {
                     href="https://github.com/Hindolch" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline"
+                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline text-sm md:text-base"
                   >
                     GitHub
                   </a>
@@ -265,7 +281,7 @@ const MainContent = () => {
                     href="https://www.linkedin.com/in/hindol-choudhury/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline"
+                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline text-sm md:text-base"
                   >
                     LinkedIn
                   </a>
@@ -276,7 +292,7 @@ const MainContent = () => {
                     href="https://x.com/Hindollllll" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline"
+                    className="text-gray-700 hover:text-blue-600 transition-colors hover:underline text-sm md:text-base"
                   >
                     Twitter
                   </a>
